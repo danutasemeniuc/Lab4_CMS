@@ -1,0 +1,129 @@
+/* ============================================================
+   USM Notes Plugin – stiluri frontend
+   ============================================================ */
+
+/* Container principal */
+.usm-notes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+/* Card notiță */
+.usm-note {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    border-left: 5px solid #bdc3c7; /* culoare implicită */
+}
+
+.usm-note:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Accent lateral pe baza priorității */
+.usm-priority-high   { border-left-color: #e74c3c; }
+.usm-priority-medium { border-left-color: #f39c12; }
+.usm-priority-low    { border-left-color: #27ae60; }
+
+/* Header: titlu + badge */
+.usm-note__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.usm-note__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.usm-note__title a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.usm-note__title a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Badge prioritate */
+.usm-note__badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2em 0.6em;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    color: #fff;
+    background: #bdc3c7;
+}
+
+.usm-badge-high   { background: #e74c3c; }
+.usm-badge-medium { background: #f39c12; }
+.usm-badge-low    { background: #27ae60; }
+
+/* Meta-informații */
+.usm-note__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.usm-note__due {
+    font-weight: 600;
+    color: #e67e22;
+}
+
+/* Rezumat */
+.usm-note__excerpt {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Link */
+.usm-note__link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.usm-note__link:hover {
+    text-decoration: underline;
+}
+
+/* Mesaj „fără notițe" */
+.usm-notes-empty {
+    background: #f8f9fa;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    padding: 1.25rem;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Responsive: o singură coloană pe ecrane mici */
+@media (max-width: 600px) {
+    .usm-notes-list {
+        grid-template-columns: 1fr;
+    }
+}
